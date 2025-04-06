@@ -1,1 +1,8 @@
-node_modules
+# 🔧 설치된 외부 의존성 모듈 (npm install로 다시 받을 수 있음)
+node_modules/
+
+# 📦 빌드된 결과물 (tsup이나 tsc로 자동 생성되므로 Git에 올릴 필요 없음)
+dist/
+
+# 🧪 테스트용 예제 프로젝트 (라이브러리 자체와 무관, 로컬 테스트 용도)
+example/
