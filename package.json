@@ -16,5 +16,9 @@
     "logger"
   ],
   "author": "Seio924",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
 }
