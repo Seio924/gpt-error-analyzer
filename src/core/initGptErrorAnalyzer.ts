@@ -1,9 +1,12 @@
-import { createErrorHandler } from './createErrorHandler';
-import { logToConsole } from '../helper/logToConsole';
 import { AnalyzerError } from '../error/AnalyzerError';
+import { handleConsoleError } from '../core/handleConsoleError';
 
-export function initGptErrorAnalyzer(): void {
-  const handleError = createErrorHandler(logToConsole);
+type InitGptErrorAnalyzerOptions = {
+  gptServerUrl?: string;
+};
+
+export function initGptErrorAnalyzer(options?: InitGptErrorAnalyzerOptions): void {
+  const gptServerUrl = options?.gptServerUrl;
 
   window.onerror = function (message, source, lineno, colno, error) {
     const analyzerError = new AnalyzerError({
@@ -14,7 +17,8 @@ export function initGptErrorAnalyzer(): void {
       line: lineno ?? undefined,
       column: colno ?? undefined,
     });
-    handleError(analyzerError);
+
+    void handleConsoleError(analyzerError, gptServerUrl);
   };
 
   window.addEventListener('unhandledrejection', function (event) {
@@ -24,6 +28,7 @@ export function initGptErrorAnalyzer(): void {
       message: reason?.message ?? String(reason),
       stack: reason?.stack,
     });
-    handleError(analyzerError);
+
+    void handleConsoleError(analyzerError, gptServerUrl);
   });
 }
