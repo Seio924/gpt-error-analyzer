@@ -44,7 +44,7 @@ initGptErrorAnalyzer({
 
 ## ✅ GPT 분석 서버 실행 방법
 
-1. 아래 레포를 서버에 **clone** 합니다.
+1. 아래 레포를 서버에 **clone** 합니다. [실행 전용 GPT 분석 서버](https://github.com/Seio924/gpt-error-analyzer-server-runtime)
 
 ```bash
 git clone https://github.com/Seio924/gpt-error-analyzer-server-runtime.git
