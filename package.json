@@ -1,22 +1,37 @@
 {
   "name": "gpt-error-analyzer",
-  "version": "0.1.0",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "version": "1.0.0",
+  "description": "에러 발생 시 GPT를 통한 자동 분석 요청 라이브러리",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
-  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "gpt",
     "error",
     "analyzer",
-    "debug",
-    "logger"
+    "debugging",
+    "openai"
   ],
   "author": "Seio924",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Seio924/gpt-error-analyzer"
+  },
+  "bugs": {
+    "url": "https://github.com/Seio924/gpt-error-analyzer/issues"
+  },
+  "homepage": "https://github.com/Seio924/gpt-error-analyzer#readme",
+  "scripts": {
+    "build": "tsup",
+    "prepare": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=16"
+  },
   "devDependencies": {
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
