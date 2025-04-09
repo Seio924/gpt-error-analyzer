@@ -14,6 +14,10 @@ export async function handleConsoleError(error: AnalyzerError, gptServerUrl?: st
     return;
   }
 
-  const summary = await postGptAnalyze(payload, gptServerUrl);
-  reportGptSummary(summary, error);
+  try {
+    const summary = await postGptAnalyze(payload, gptServerUrl);
+    reportGptSummary(summary, error);
+  } catch (e) {
+    console.warn('⚠️ GPT 분석 요청 실패 (네트워크 문제 등), 재요청하지 않습니다.');
+  }
 }
