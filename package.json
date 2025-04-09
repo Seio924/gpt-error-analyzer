@@ -1,6 +1,6 @@
 {
   "name": "gpt-error-analyzer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "에러 발생 시 GPT를 통한 자동 분석 요청 라이브러리",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
